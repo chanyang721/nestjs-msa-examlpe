@@ -45,6 +45,33 @@
       "compilerOptions": {
         "tsConfigPath": "libs/configuration/tsconfig.lib.json"
       }
+    },
+    "authentication": {
+      "type": "library",
+      "root": "libs/authentication",
+      "entryFile": "index",
+      "sourceRoot": "libs/authentication/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/authentication/tsconfig.lib.json"
+      }
+    },
+    "core-fundamentals": {
+      "type": "library",
+      "root": "libs/core-fundamentals",
+      "entryFile": "index",
+      "sourceRoot": "libs/core-fundamentals/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/core-fundamentals/tsconfig.lib.json"
+      }
+    },
+    "utils": {
+      "type": "library",
+      "root": "libs/utils",
+      "entryFile": "index",
+      "sourceRoot": "libs/utils/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/utils/tsconfig.lib.json"
+      }
     }
   }
 }

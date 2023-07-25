@@ -19,10 +19,7 @@
     "noFallthroughCasesInSwitch": false,
     "paths": {
       "@app/libs": [
-        "libs/libs/src"
-      ],
-      "@app/libs/*": [
-        "libs/libs/src/*"
+        "libs/*"
       ],
       "@app/database": [
         "libs/database/src"
@@ -35,6 +32,24 @@
       ],
       "@app/configuration/*": [
         "libs/configuration/src/*"
+      ],
+      "@app/authentication": [
+        "libs/authentication/src"
+      ],
+      "@app/authentication/*": [
+        "libs/authentication/src/*"
+      ],
+      "@app/core-fundamentals": [
+        "libs/core-fundamentals",
+      ],
+      "@app/core-fundamentals/*": [
+        "libs/core-fundamentals/*",
+      ],
+      "@app/utils": [
+        "libs/utils"
+      ],
+      "@app/utils/*": [
+        "libs/utils/*"
       ]
     }
   }
