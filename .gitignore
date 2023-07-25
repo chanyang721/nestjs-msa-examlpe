@@ -1,6 +1,14 @@
 # compiled output
 /dist
 /node_modules
+**/node_modules
+
+# env
+.env*
+**/.env*
+
+# container data
+/db_data
 
 # Logs
 logs
@@ -10,9 +18,6 @@ pnpm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
-
-# env
-.env*
 
 # OS
 .DS_Store
