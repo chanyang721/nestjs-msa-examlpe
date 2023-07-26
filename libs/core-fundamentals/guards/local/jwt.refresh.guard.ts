@@ -1,8 +1,8 @@
 import { Request }                                                                           from "express";
 import { ExecutionContext, Injectable, Logger, UnauthorizedException }                       from "@nestjs/common";
 import { AuthGuard }                                                                         from "@nestjs/passport";
-import { ExtractJwt }                                                                        from "passport-jwt";
-import { JwtService }                                                                                                     from '@app/authentication/jwt/jwt.service'
+import { ExtractJwt }                                                                                                     from "passport-jwt";
+import { JwtService }                                                                                                     from '../../../jwt/jwt.service'
 import { COOKIE_ACCESS_TOKEN_NAME, COOKIE_ACCESS_TOKEN_OPTIONS, COOKIE_REFRESH_TOKEN_NAME, COOKIE_REFRESH_TOKEN_OPTIONS } from '@app/utils/constants'
 
 

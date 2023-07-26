@@ -1,40 +1,22 @@
 {
   "$schema": "https://json.schemastore.org/nest-cli",
   "collection": "@nestjs/schematics",
-  "sourceRoot": "apps/nestjs-msa-example/src",
+  "sourceRoot": "apps/project/src",
   "compilerOptions": {
     "deleteOutDir": true,
     "webpack": true,
-    "tsConfigPath": "apps/nestjs-msa-example/tsconfig.app.json"
+    "tsConfigPath": "apps/project/tsconfig.app.json"
   },
   "monorepo": true,
-  "root": "apps/nestjs-msa-example",
+  "root": "apps/project",
   "projects": {
-    "nestjs-msa-example": {
+    "project": {
       "type": "application",
-      "root": "apps/nestjs-msa-example",
+      "root": "apps/project",
       "entryFile": "main",
-      "sourceRoot": "apps/nestjs-msa-example/src",
+      "sourceRoot": "apps/project/src",
       "compilerOptions": {
-        "tsConfigPath": "apps/nestjs-msa-example/tsconfig.app.json"
-      }
-    },
-    "user": {
-      "type": "application",
-      "root": "apps/user",
-      "entryFile": "main",
-      "sourceRoot": "apps/user/src",
-      "compilerOptions": {
-        "tsConfigPath": "apps/user/tsconfig.app.json"
-      }
-    },
-    "database": {
-      "type": "library",
-      "root": "libs/database",
-      "entryFile": "index",
-      "sourceRoot": "libs/database/src",
-      "compilerOptions": {
-        "tsConfigPath": "libs/database/tsconfig.lib.json"
+        "tsConfigPath": "apps/project/tsconfig.app.json"
       }
     },
     "configuration": {
@@ -46,15 +28,6 @@
         "tsConfigPath": "libs/configuration/tsconfig.lib.json"
       }
     },
-    "authentication": {
-      "type": "library",
-      "root": "libs/authentication",
-      "entryFile": "index",
-      "sourceRoot": "libs/authentication/src",
-      "compilerOptions": {
-        "tsConfigPath": "libs/authentication/tsconfig.lib.json"
-      }
-    },
     "core-fundamentals": {
       "type": "library",
       "root": "libs/core-fundamentals",
@@ -64,13 +37,22 @@
         "tsConfigPath": "libs/core-fundamentals/tsconfig.lib.json"
       }
     },
-    "utils": {
+    "database": {
       "type": "library",
-      "root": "libs/utils",
+      "root": "libs/database",
       "entryFile": "index",
-      "sourceRoot": "libs/utils/src",
+      "sourceRoot": "libs/database/src",
       "compilerOptions": {
-        "tsConfigPath": "libs/utils/tsconfig.lib.json"
+        "tsConfigPath": "libs/database/tsconfig.lib.json"
+      }
+    },
+    "authentication": {
+      "type": "application",
+      "root": "apps/authentication",
+      "entryFile": "main",
+      "sourceRoot": "apps/authentication/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/authentication/tsconfig.app.json"
       }
     }
   }

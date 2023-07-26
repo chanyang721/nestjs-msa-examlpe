@@ -1,8 +1,8 @@
 import { HttpException, HttpStatus, Injectable, UnauthorizedException } from "@nestjs/common";
 import { PassportStrategy }                                             from "@nestjs/passport";
-import { Strategy }                                                     from "passport-local";
-import { FirebaseService }                                              from '@app/authentication/infrastructure/platforms/firebase/firebase.service'
-import { RegisterUserDto }                                              from '@app/authentication/presentation/dtos/auth.register.user.dto'
+import { Strategy }        from "passport-local";
+import { FirebaseService } from '@app/authentication/infrastructure/platforms/firebase/firebase.services'
+import { RegisterUserDto } from '@app/authentication/presentation/dtos/auth.register.user.dto'
 
 
 

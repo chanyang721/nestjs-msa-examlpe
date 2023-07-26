@@ -40,10 +40,10 @@
         "libs/authentication/src/*"
       ],
       "@app/core-fundamentals": [
-        "libs/core-fundamentals",
+        "libs/core-fundamentals"
       ],
       "@app/core-fundamentals/*": [
-        "libs/core-fundamentals/*",
+        "libs/core-fundamentals/*"
       ],
       "@app/utils": [
         "libs/utils"

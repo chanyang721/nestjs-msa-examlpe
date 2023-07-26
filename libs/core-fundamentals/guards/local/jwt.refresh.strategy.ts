@@ -1,10 +1,10 @@
 import { HttpException, HttpStatus, Injectable, Logger } from "@nestjs/common";
 import { ConfigService }                                 from "@nestjs/config";
 import { PassportStrategy }                              from "@nestjs/passport";
-import { ExtractJwt, Strategy }                          from "passport-jwt";
-import { COOKIE_REFRESH_TOKEN_NAME }                     from "@app/utils/constants";
-import { AuthService }                                   from '@app/authentication/application/services/auth.service'
-import { JwtService }                                    from '@app/authentication/jwt/jwt.service'
+import { ExtractJwt, Strategy }      from "passport-jwt";
+import { COOKIE_REFRESH_TOKEN_NAME } from "@app/utils/constants";
+import { AuthService } from '@app/authentication/application/services/auth.service'
+import { JwtService }  from '../../../jwt/jwt.service'
 
 
 
