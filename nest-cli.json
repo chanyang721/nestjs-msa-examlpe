@@ -10,13 +10,13 @@
   "monorepo": true,
   "root": "apps/project",
   "projects": {
-    "project": {
+    "authentication": {
       "type": "application",
-      "root": "apps/project",
+      "root": "apps/authentication",
       "entryFile": "main",
-      "sourceRoot": "apps/project/src",
+      "sourceRoot": "apps/authentication/src",
       "compilerOptions": {
-        "tsConfigPath": "apps/project/tsconfig.app.json"
+        "tsConfigPath": "apps/authentication/tsconfig.app.json"
       }
     },
     "configuration": {
@@ -46,13 +46,22 @@
         "tsConfigPath": "libs/database/tsconfig.lib.json"
       }
     },
-    "authentication": {
-      "type": "application",
-      "root": "apps/authentication",
-      "entryFile": "main",
-      "sourceRoot": "apps/authentication/src",
+    "jwt": {
+      "type": "library",
+      "root": "libs/jwt",
+      "entryFile": "index",
+      "sourceRoot": "libs/jwt/src",
       "compilerOptions": {
-        "tsConfigPath": "apps/authentication/tsconfig.app.json"
+        "tsConfigPath": "libs/jwt/tsconfig.lib.json"
+      }
+    },
+    "utils": {
+      "type": "library",
+      "root": "libs/utils",
+      "entryFile": "index",
+      "sourceRoot": "libs/utils/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/utils/tsconfig.lib.json"
       }
     }
   }

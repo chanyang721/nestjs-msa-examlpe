@@ -2,7 +2,8 @@ import { Injectable } from '@nestjs/common';
 
 @Injectable()
 export class AuthenticationService {
-  getHello(): string {
+
+  async getHello(): Promise<any> {
     return 'Hello World!';
   }
 }
