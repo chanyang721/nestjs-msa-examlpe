@@ -7,17 +7,17 @@ import { ExtractJwt, Strategy } from "passport-jwt";
 
 @Injectable()
 export class JwtAuthGlobalStrategy extends PassportStrategy(Strategy) {
-  constructor( private readonly configService: ConfigService ) {
-    super({
-      jwtFromRequest   : ExtractJwt.fromAuthHeaderAsBearerToken(),
-      ignoreExpiration : false,
-      secretOrKey      : process.env.JWT_SECRET || configService.get("JWT_SECRET"),
-      passReqToCallback: true
-    });
-  }
+    constructor( private readonly configService: ConfigService ) {
+        super({
+            jwtFromRequest   : ExtractJwt.fromAuthHeaderAsBearerToken(),
+            ignoreExpiration : false,
+            secretOrKey      : process.env.JWT_SECRET || configService.get("JWT_SECRET"),
+            passReqToCallback: true,
+        });
+    }
 
 
-  async validate( req: Request, payload: any ) {
-    return { req, ...payload };
-  }
+    async validate( req: Request, payload: any ) {
+        return { req, ...payload };
+    }
 }

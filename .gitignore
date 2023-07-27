@@ -1,10 +1,8 @@
 # compiled output
-/dist
-/node_modules
+**/dist
 **/node_modules
 
 # env
-.env*
 **/.env*
 
 # container data

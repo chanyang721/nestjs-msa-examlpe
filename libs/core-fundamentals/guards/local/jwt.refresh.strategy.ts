@@ -1,10 +1,9 @@
+import { ExtractJwt, Strategy }                          from "passport-jwt";
 import { HttpException, HttpStatus, Injectable, Logger } from "@nestjs/common";
 import { ConfigService }                                 from "@nestjs/config";
 import { PassportStrategy }                              from "@nestjs/passport";
-import { ExtractJwt, Strategy }      from "passport-jwt";
-import { COOKIE_REFRESH_TOKEN_NAME } from "@app/utils/constants";
-import { AuthService } from '@app/authentication/application/services/auth.service'
-import { JwtService }  from '../../../jwt/jwt.service'
+import { COOKIE_REFRESH_TOKEN_NAME }                     from "@app/utils/constants";
+import { JwtService }                                    from '@app/jwt'
 
 
 
@@ -13,8 +12,9 @@ export class JwtAuthRefreshStrategy extends PassportStrategy(Strategy, "jwt-refr
     private readonly logger = new Logger(JwtAuthRefreshStrategy.name);
 
 
-    constructor( private readonly configService: ConfigService, private readonly jwtService: JwtService,
-        private readonly authService: AuthService,
+    constructor(
+        private readonly configService: ConfigService,
+        private readonly jwtService: JwtService,
     ) {
         super({
             jwtFromRequest   : ExtractJwt.fromExtractors([

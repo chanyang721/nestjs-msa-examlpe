@@ -32,7 +32,7 @@
       "type": "library",
       "root": "libs/core-fundamentals",
       "entryFile": "index",
-      "sourceRoot": "libs/core-fundamentals/src",
+      "sourceRoot": "libs/core-fundamentals",
       "compilerOptions": {
         "tsConfigPath": "libs/core-fundamentals/tsconfig.lib.json"
       }
@@ -59,7 +59,7 @@
       "type": "library",
       "root": "libs/utils",
       "entryFile": "index",
-      "sourceRoot": "libs/utils/src",
+      "sourceRoot": "libs/utils",
       "compilerOptions": {
         "tsConfigPath": "libs/utils/tsconfig.lib.json"
       }

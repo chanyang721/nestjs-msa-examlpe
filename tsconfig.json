@@ -46,12 +46,10 @@
         "libs/core-fundamentals/*"
       ],
       "@app/utils": [
-        "libs/utils",
-        "libs/utils/src"
+        "libs/utils"
       ],
       "@app/utils/*": [
-        "libs/utils/*",
-        "libs/utils/src/*"
+        "libs/utils/*"
       ],
       "@app/jwt": [
         "libs/jwt/src"

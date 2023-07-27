@@ -1,37 +1,35 @@
-import { HttpException, HttpStatus, Injectable, UnauthorizedException } from "@nestjs/common";
-import { PassportStrategy }                                             from "@nestjs/passport";
-import { Strategy }        from "passport-local";
-import { FirebaseService } from '@app/authentication/infrastructure/platforms/firebase/firebase.services'
-import { RegisterUserDto } from '@app/authentication/presentation/dtos/auth.register.user.dto'
+import { HttpException, HttpStatus, Injectable } from "@nestjs/common";
+import { PassportStrategy }                      from "@nestjs/passport";
+import { Strategy }                              from "passport-local";
 
 
 
 @Injectable()
 export class LocalAuthStrategy extends PassportStrategy(Strategy) {
-    private readonly firebaseClient: any;
+    // private readonly cognitoClient: any;
 
-
-    constructor( private readonly firebaseService: FirebaseService ) {
+    constructor(
+        // private readonly cognitoService: CognitoService
+    ) {
         super({
-            usernameField: "uid",
-            passwordField: "id_token",
+            usernameField: "uid", // passwordField: "id_token",
         });
-        this.firebaseClient = firebaseService.getFirebaseClient();
+        // this.cognitoClient = cognitoService.getFirebaseClient();
     }
 
 
     async validate( uid: string, id_token: string ): Promise<any> {
         try {
-            const decodedFirebaseToken = this.firebaseClient.auth()
-                                             .verifyIdToken(id_token);
+            // const decodedFirebaseToken = this.firebaseClient.auth()
+            //                                  .verifyIdToken(id_token);
 
-            if ( decodedFirebaseToken.uid !== uid ) {
-                throw new UnauthorizedException("firebase uid is not matched with user uid in db");
-            }
+            // if ( decodedFirebaseToken.uid !== uid ) {
+            //     throw new UnauthorizedException("firebase uid is not matched with user uid in db");
+            // }
 
             return {
-                uid, ...decodedFirebaseToken,
-            } as RegisterUserDto;
+                uid, // ...decodedFirebaseToken,
+            };
         }
         catch ( e ) {
             if ( e.code === "auth/argument-error" ) {

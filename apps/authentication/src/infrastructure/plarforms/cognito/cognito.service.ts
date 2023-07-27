@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common'
+import { Injectable }           from '@nestjs/common'
 import { ConfigurationService } from '@app/configuration'
 
 
@@ -7,9 +7,8 @@ import { ConfigurationService } from '@app/configuration'
 export class CognitoService {
     private readonly cognitoClient: any;
 
-    constructor(
-        private readonly configurationService: ConfigurationService
-    ) {
-        this.cognitoClient =  this.configurationService.accessAwsCognitoConfig
+
+    constructor( private readonly configurationService: ConfigurationService ) {
+        this.cognitoClient = this.configurationService.accessAwsCognitoConfig
     }
 }
