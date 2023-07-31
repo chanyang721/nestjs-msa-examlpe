@@ -1,0 +1,69 @@
+version: '3.9'
+
+services:
+  mysql_main_db:
+    image: mysql
+    container_name: ${MYSQL_MAIN_CONTAINER_NAME}
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_MAIN_DB_DATABASE}
+      MYSQL_PASSWORD: ${MYSQL_DB_PASSWORD}
+    ports:
+      - ${MYSQL_MAIN_DB_PORT}:${MYSQL_MAIN_DB_PORT}
+    volumes:
+      - ./db_data/mysql_main_db:/var/lib/mysql
+    networks:
+      - backend
+
+
+  mongo_main_db:
+    image: mongo
+    container_name: ${MONGO_DB_CONTAINER_HOST}
+    restart: always
+    ports:
+      - ${MONGO_DB_PORT}:${MONGO_DB_PORT}
+    volumes:
+      - ./db_data/mongo_main_db:/var/lib/mongodb
+    networks:
+      - backend
+
+
+  support_cache_redis:
+    image: redis:7.0-alpine
+    container_name: ${REDIS_HOST}
+    restart: always
+    ports:
+      - ${REDIS_PORT}:${REDIS_PORT}
+    volumes:
+      - ./db_data/redis_support_cache:/data
+    networks:
+      - backend
+
+
+  authentication_service:
+    container_name: authentication_service
+    working_dir: /app/authentication_service
+    build:
+      context: .
+      dockerfile: ./apps/authentication/Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./:/app/auth_service
+    networks:
+      - backend
+
+
+volumes:
+  mysql_main_db:
+    driver: local
+  mongo_main_db:
+    driver: local
+  redis_support_cache:
+    driver: local
+
+
+networks:
+  backend:
+    driver: bridge
