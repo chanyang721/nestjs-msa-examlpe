@@ -12,7 +12,7 @@ services:
     ports:
       - ${MYSQL_MAIN_DB_PORT}:${MYSQL_MAIN_DB_PORT}
     volumes:
-      - ./db_data/mysql_main_db:/var/lib/mysql
+      - ./db_data/mysql_main_db:/var/libs/mysql
     networks:
       - backend
 
@@ -24,7 +24,7 @@ services:
     ports:
       - ${MONGO_DB_PORT}:${MONGO_DB_PORT}
     volumes:
-      - ./db_data/mongo_main_db:/var/lib/mongodb
+      - ./db_data/mongo_main_db:/var/libs/mongodb
     networks:
       - backend
 
